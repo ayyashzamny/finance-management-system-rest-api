@@ -24,7 +24,7 @@ Ensure you have the following installed:
 
 ### Clone Repository
 ```sh
-git clone https://github.com/SE1020-IT2070-OOP-DSA-25/project-ayyashzamny.git
+git clone https://github.com/ayyashzamny/finance-management-system-rest-api.git
 cd finance-management-api
 ```
 
