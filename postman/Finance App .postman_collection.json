@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "0fac3f50-11dd-4749-8838-108f0499e536",
+		"name": "Finance App ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33142008"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john_doe\",\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"user123\",\r\n    \"role\": \"regular\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"admin123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"user123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trasection",
+			"item": [
+				{
+					"name": "get Transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA1MTQ2LCJleHAiOjE3NDE1MDg3NDZ9.vPdS4oPNNTOlVf-kN5KuTpwEjulQKOExmOQcsrQIxP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post Transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNDQ4NzQ1LCJleHAiOjE3NDE0NTIzNDV9.jrBcPzTpr-zrtbJPMSce79zu8rmkMpPYKsLEojgbG60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"expense\",\r\n  \"amount\": 500,\r\n  \"category\": \"Food\",\r\n  \"tags\": [\"#grocery\", \"#dining\"],\r\n  \"recurring\": {\r\n    \"isRecurring\": true,\r\n    \"frequency\": \"monthly\",\r\n    \"endDate\": \"2025-01-01\"\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Transection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNDQ4NzQ1LCJleHAiOjE3NDE0NTIzNDV9.jrBcPzTpr-zrtbJPMSce79zu8rmkMpPYKsLEojgbG60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 600,\r\n  \"category\": \"Dining\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/transactions/67cc66ce9cddd7f9c387c341",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"transactions",
+								"67cc66ce9cddd7f9c387c341"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Trasection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNDQ4NzQ1LCJleHAiOjE3NDE0NTIzNDV9.jrBcPzTpr-zrtbJPMSce79zu8rmkMpPYKsLEojgbG60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/transactions/filter?tag=%23work",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"transactions",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "%23work"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Trasection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNDQ4NzQ1LCJleHAiOjE3NDE0NTIzNDV9.jrBcPzTpr-zrtbJPMSce79zu8rmkMpPYKsLEojgbG60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/transactions/67cc66ce9cddd7f9c387c341",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"transactions",
+								"67cc66ce9cddd7f9c387c341"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Budget",
+			"item": [
+				{
+					"name": "Get Budget",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTM3NDA4LCJleHAiOjE3NDE1NDEwMDh9._6cTM46uUOWtyUDcdOEc7Tl-uF6x4l0rPFw1b6UDo28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/budgets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"budgets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Budget",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA1MTQ2LCJleHAiOjE3NDE1MDg3NDZ9.vPdS4oPNNTOlVf-kN5KuTpwEjulQKOExmOQcsrQIxP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": \"Healthcare\",\r\n  \"amount\": 500,\r\n  \"notificationThreshold\": 80\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/budgets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"budgets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Budget by Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA1MTQ2LCJleHAiOjE3NDE1MDg3NDZ9.vPdS4oPNNTOlVf-kN5KuTpwEjulQKOExmOQcsrQIxP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/budgets/Entertainment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"budgets",
+								"Entertainment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Budget Amount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA1MTQ2LCJleHAiOjE3NDE1MDg3NDZ9.vPdS4oPNNTOlVf-kN5KuTpwEjulQKOExmOQcsrQIxP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 1500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/budgets/Entertainment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"budgets",
+								"Entertainment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Budget",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA1MTQ2LCJleHAiOjE3NDE1MDg3NDZ9.vPdS4oPNNTOlVf-kN5KuTpwEjulQKOExmOQcsrQIxP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/budgets/Entertainment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"budgets",
+								"Entertainment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Track Spending & Alerts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA1MTQ2LCJleHAiOjE3NDE1MDg3NDZ9.vPdS4oPNNTOlVf-kN5KuTpwEjulQKOExmOQcsrQIxP8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/budgets/track/03-2025",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"budgets",
+								"track",
+								"03-2025"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get Financial Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTA4ODA3LCJleHAiOjE3NDE1MTI0MDd9.RW02W2CK0aF4hi9iZdDgs1BWUnOL8yJzKXzIYElfwwA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/reports/financial?startDate=2025-01-01&endDate=2025-12-31&category=Food&tags=%23grocery%2C%23dinner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"reports",
+								"financial"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-12-31"
+								},
+								{
+									"key": "category",
+									"value": "Food"
+								},
+								{
+									"key": "tags",
+									"value": "%23grocery%2C%23dinner"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Goals",
+			"item": [
+				{
+					"name": "Get Goals",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTMxNDkyLCJleHAiOjE3NDE1MzUwOTJ9.27QdNp8m8iK0fG_MwX24g-YjCbd54bX5v4OLoA3Htq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/goals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"goals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Goals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTMxNDkyLCJleHAiOjE3NDE1MzUwOTJ9.27QdNp8m8iK0fG_MwX24g-YjCbd54bX5v4OLoA3Htq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Save for a new laptop\",\r\n  \"targetAmount\": 2000,\r\n  \"dueDate\": \"2025-04-01\",\r\n  \"autoSavePercentage\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/goals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"goals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Goal by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTMxNDkyLCJleHAiOjE3NDE1MzUwOTJ9.27QdNp8m8iK0fG_MwX24g-YjCbd54bX5v4OLoA3Htq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/goals/67cdaa848b1356cd79b6165e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"goals",
+								"67cdaa848b1356cd79b6165e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Goals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTMxNDkyLCJleHAiOjE3NDE1MzUwOTJ9.27QdNp8m8iK0fG_MwX24g-YjCbd54bX5v4OLoA3Htq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Save for a new car\",\r\n  \"targetAmount\": 6000,\r\n  \"savedAmount\": 2500,\r\n  \"dueDate\": \"2026-12-31\",\r\n  \"autoSavePercentage\": 25\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/goals/67cdaa848b1356cd79b6165e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"goals",
+								"67cdaa848b1356cd79b6165e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Goal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YzhlN2Q2ZGFkZjZiYzlmOGJiMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzQxNTMxNDkyLCJleHAiOjE3NDE1MzUwOTJ9.27QdNp8m8iK0fG_MwX24g-YjCbd54bX5v4OLoA3Htq8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/goals/67cdaa768b1356cd79b6165a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"goals",
+								"67cdaa768b1356cd79b6165a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Operations",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YTFiODJjZjBjMmY3M2RkMmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MTU0NDAzOSwiZXhwIjoxNzQxNTQ3NjM5fQ.2PGPhIer1CSclWn8nYhzUhnANH7WI7Qhltyuu5-fbH0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/users/all-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"users",
+								"all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transection Summary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmI0YTFiODJjZjBjMmY3M2RkMmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MTU0NDk3MiwiZXhwIjoxNzQxNTQ4NTcyfQ.WYFym7UGKshX-jERS1lZPIIHCxdTu5nqSuM2INes8xU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/transactions/summary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"transactions",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
