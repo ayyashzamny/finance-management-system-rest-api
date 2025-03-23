@@ -33,14 +33,6 @@ cd finance-management-api
 npm install
 ```
 
-### Environment Variables
-Create a `.env` file in the root directory and configure the following:
-```
-PORT=5050
-MONGO_URI=mongodb+srv://ayyashzamny2002:f84OIKTdN3AgMSUI@cluster0.awhys.mongodb.net/
-MONGO_URI_TEST=mongodb+srv://ayyashzamny2002:f84OIKTdN3AgMSUI@cluster0.mongodb.net/test_db?retryWrites=true&w=majority
-JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-```
 
 ### Start the Server
 ```sh
